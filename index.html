@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GNU/Linux: Основи та Використання</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #282c34;
+            font-size: 20px;
+            color: white;
+        }
+
+        h1 {
+            color: white;
+            font-size: 84px;
+        }
+
+        h2, h3 {
+            color: white;
+            font-size: 36px;
+        }
+
+        p {
+            margin: 10px 0;
+            font-size: 24px;
+        }
+
+        .section {
+            height: 100vh;
+            background-color: #282c34;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 0;
+            padding-left: 400px; 
+            padding-right: 400px;
+        }
+
+        ul {
+            font-size: 20px;
+        }
+
+        .section1 {
+            padding-top: 100px;
+            height: 160vh;
+            background-color: #282c34;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            align-items: left;
+            margin-bottom: 0;
+        }
+
+        .section2 {
+            height: 100vh;
+            background-color: #282c34;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 0;
+        }
+
+        .section2 h2{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section1 h2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        code, pre{
+            background-color: #474747;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .command {
+            background-color: rgb(255, 255, 255);
+            padding: 10px;
+            border-left: 5px solid #007BFF;
+            margin-bottom: 10px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1em;
+            width: 530px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .title-screen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            background-color: #282c34;
+            color: #fff;
+        }
+
+        .title-screen h1 {
+            font-size: 4em;
+            margin-bottom: 0.2em;
+        }
+
+        .title-screen p {
+            font-size: 2em;
+        }
+
+        .content {
+            display: none;
+        }
+
+        .imagesertifacate {
+            max-width: 50%;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-screen">
+        <div>
+            <h1>GNU/Linux: Основи та Використання</h1>
+            <p>Проєкт створив: Король Максим</p>
+        </div>
+    </div>
+
+    <div class="content">
+
+        <div class="section" id="section1">
+            <h2>1. Коротка інформація про ОС GNU/Linux</h2>
+            <p>GNU/Linux — це операційна система з відкритим кодом, яка базується на ядрі Linux, розробленому Лінусом Торвальдсом у 1991 році. Вона відзначається високою стабільністю, безпекою та налаштовуваністю, що робить її популярною серед розробників і серверних систем.</p>
+        </div>
+
+        <div class="section" id="section2">
+            <h2>2. Перелік найбільш популярних дистрибутивів</h2>
+            <ul>
+                <li>Ubuntu</li>
+                <li>Debian</li>
+                <li>Fedora</li>
+                <li>Arch Linux</li>
+                <li>CentOS</li>
+                <li>Mint</li>
+            </ul>
+        </div>
+
+        <div class="section" id="section3">
+            <h2>3. Приклади команд роботи в Linux CLI</h2>
+            <ul>
+                <li><code>pwd</code> — виводить поточний каталог</li>
+                <li><code>echo</code> — виводить текст або змінні</li>
+                <li><code>ls</code> — показує вміст каталогу</li>
+                <li><code>cd</code> — змінює поточний каталог</li>
+                <li><code>touch</code> — створює новий файл</li>
+                <li><code>mkdir</code> — створює нову директорію</li>
+                <li><code>cp</code> — копіює файли або каталоги</li>
+                <li><code>mv</code> — переміщує або перейменовує файли</li>
+                <li><code>rm</code> — видаляє файли або директорії</li>
+                <li><code>history</code> — показує історію виконаних команд</li>
+            </ul>
+        </div>
+
+        <div class="section" id="section4">
+            <h2>4. BASH-cкрипт, що імітує авторизацію в системі</h2>
+            <p>Простий BASH-сценарій, який запитує ім'я користувача та пароль:</p>
+            <div class="command">
+                <pre><code>
+#!/bin/bash
+echo "Введіть ім'я користувача:"
+read username
+echo "Введіть пароль:"
+read -s password
+
+if [[ $username == "admin" && $password == "admin" ]]; then
+    echo "Авторизація успішна!"
+else
+    echo "Невірне ім'я користувача або пароль!"
+fi
+                </code></pre>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        setTimeout(function() {
+            document.querySelector('.title-screen').style.display = 'none';
+            document.querySelector('.content').style.display = 'block';
+        }, 3000);
+    </script>
+
+</body>
+</html>
